@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
     tools:context="com.sirtprojects.testejuh.TestsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/relative_layout_tests_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/text_view_tests_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_tests_escolha"
+            android:textSize="30sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/relative_layout_tests_title"
+        android:id="@+id/relative_layout_tests_buttons"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_tests_lista_dispositivos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_tests_lista_dispositivos"/>
+
+        <Button
+            android:layout_below="@+id/button_tests_lista_dispositivos"
+            android:id="@+id/button_tests_comandos"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_tests_comandos"/>
+
+        <Button
+            android:layout_below="@+id/button_tests_comandos"
+            android:id="@+id/button_tests_act3"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_below="@+id/button_tests_act3"
+            android:id="@+id/button_tests_act4"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
