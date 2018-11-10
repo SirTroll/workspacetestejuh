@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    tools:context="com.sirtprojects.testejuh.TestsActivity">
+    android:padding="8dp"
+    tools:context="com.sirtprojects.testejuh.TestsActivity"
+    android:background="#fff">
 
     <RelativeLayout
         android:id="@+id/relative_layout_tests_title"
@@ -19,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/string_tests_escolha"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:textColor="#000"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -45,13 +47,14 @@
 
         <Button
             android:layout_below="@+id/button_tests_comandos"
-            android:id="@+id/button_tests_act3"
+            android:id="@+id/button_tests_testes"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/tests_testes_layout"/>
 
         <Button
-            android:layout_below="@+id/button_tests_act3"
+            android:layout_below="@+id/button_tests_testes"
             android:id="@+id/button_tests_act4"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"

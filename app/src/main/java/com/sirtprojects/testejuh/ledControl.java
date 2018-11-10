@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -50,6 +51,14 @@ public class ledControl extends Activity {
         Discnt = findViewById(R.id.dis_btn);
         Abt = findViewById(R.id.abt_btn);
         editTextCode = findViewById(R.id.edit_text_code);
+        editTextCode.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    hideKeyboard(v);
+                }
+            }
+        });
 
         new ConnectBT().execute(); //Call the class to connect
 
@@ -81,6 +90,11 @@ public class ledControl extends Activity {
         });
 
 
+    }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     private void Disconnect()
@@ -155,8 +169,6 @@ public class ledControl extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
     private class ConnectBT extends AsyncTask<Void, Void, Void>  // UI thread
     {

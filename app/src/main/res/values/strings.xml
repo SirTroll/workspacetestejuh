@@ -15,8 +15,10 @@
     <string name="dispositivos_pareados">Dispositivos pareados</string>
     <string name="dispostivos_dispon_veis">Dispostivos disponíveis</string>
     <string name="digite_seu_codigo">Digite seu código</string>
-    <string name="comandos_testes">Comandos testes disponíveis</string>
+    <string name="comandos_testes">Comandos: testes disponíveis</string>
     <string name="string_tests_escolha">ESCOLHA SUA TELA:</string>
     <string name="string_tests_lista_dispositivos">Lista de dispositivos</string>
     <string name="string_tests_comandos">Comandos</string>
+    <string name="tests_testes_layout">Testes de Layout</string>
+    <string name="enviar">Enviar</string>
 </resources>

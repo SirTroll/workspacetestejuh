@@ -10,7 +10,7 @@ import com.led_on_off.led.R;
 
 public class TestsActivity extends Activity implements View.OnClickListener {
 
-    Button btComandos, btListaDispositivos;
+    Button btComandos, btListaDispositivos, btTesteLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +19,11 @@ public class TestsActivity extends Activity implements View.OnClickListener {
 
         btComandos = findViewById(R.id.button_tests_comandos);
         btListaDispositivos = findViewById(R.id.button_tests_lista_dispositivos);
+        btTesteLayout = findViewById(R.id.button_tests_testes);
 
         btComandos.setOnClickListener(this);
         btListaDispositivos.setOnClickListener(this);
-
+        btTesteLayout.setOnClickListener(this);
 
     }
 
@@ -36,6 +37,9 @@ public class TestsActivity extends Activity implements View.OnClickListener {
             }
             else if(v.getId() == btListaDispositivos.getId()){
                 Intent intent = new Intent(TestsActivity.this, DeviceList.class);
+                startActivity(intent);
+            } else if (v.getId() == btTesteLayout.getId()) {
+                Intent intent = new Intent(TestsActivity.this, LayoutActivity.class);
                 startActivity(intent);
             }
         }
