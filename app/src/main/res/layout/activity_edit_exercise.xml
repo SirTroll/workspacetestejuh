@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sirtprojects.testejuh.Activities.EditExerciseActivity"
+    android:background="#fff"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edit_exercise_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adicionar exercício"
+            android:textSize="32sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edit_exercise_name"
+        android:layout_below="@+id/relative_layout_edit_exercise_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/username_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_text_edit_exercise_name_exercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="18sp"
+                android:ems="18"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:lines="1"
+                android:textColorHighlight="#7cff88"
+                android:hint="Nome do exercício"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edit_exercise_level"
+        android:layout_below="@id/relative_layout_edit_exercise_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_edit_exercise_titlelevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nível:"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_edit_exercise_buttonscategoria"
+            android:layout_below="@+id/linear_layout_edit_exercise_titlelevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button_edit_exercise_cone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="CONE"/>
+
+            <Button
+                android:id="@+id/button_edit_exercise_arco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="2dp"
+                android:textColor="#000"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="ARCO"/>
+
+            <Button
+                android:id="@+id/button_edit_exercise_escada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="2dp"
+                android:textColor="#000"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="ESCADA"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edit_exercise_mid"
+        android:layout_below="@+id/relative_layout_edit_exercise_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_edit_exercise_titlebutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nível:"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_edit_exercise_buttonslevel"
+            android:layout_below="@+id/linear_layout_edit_exercise_titlebutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button_edit_exercise_facil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="Fácil"/>
+
+            <Button
+                android:id="@+id/button_edit_exercise_medio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="2dp"
+                android:textColor="#000"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="Médio"/>
+
+            <Button
+                android:id="@+id/button_edit_exercise_dificil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="2dp"
+                android:textColor="#000"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="Difícil"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/linear_layout_edit_exercise_buttonslevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp">
+
+            <Button
+                android:id="@+id/button_edit_exercise_personalizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="Personalizar"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edit_exercise_description"
+        android:layout_below="@+id/relative_layout_edit_exercise_mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_edit_exercise_titledescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descrição:"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/linear_layout_edit_exercise_titledescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:maxLines="5"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancelar"
+                android:background="@drawable/rounded_button_green"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="40dp"
+                android:text="Finalizar"
+                android:background="@drawable/rounded_button_green"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

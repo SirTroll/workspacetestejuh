@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.sirtprojects.testejuh.TestsActivity"
+    tools:context="com.sirtprojects.testejuh.Activities.TestsActivity"
     android:background="#fff">
 
     <RelativeLayout
@@ -55,10 +55,11 @@
 
         <Button
             android:layout_below="@+id/button_tests_testes"
-            android:id="@+id/button_tests_act4"
+            android:id="@+id/button_tests_main"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Main"/>
 
 
     </RelativeLayout>

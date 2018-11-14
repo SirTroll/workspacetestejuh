@@ -1,4 +1,4 @@
-package com.sirtprojects.testejuh;
+package com.sirtprojects.testejuh.Activities;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -22,9 +22,9 @@ import java.io.IOException;
 import java.util.UUID;
 
 
-public class ledControl extends Activity {
+public class ledControl extends Activity implements View.OnClickListener {
 
-    Button On, Off, Discnt, Abt;
+    Button btSendCode, btLedOn, btLedOff, btDisconnect, btAbout, btDelay1s, btDelay5s, btPreset, btBuzzOn, btBuzzOff;
     EditText editTextCode;
     String address = null;
     private ProgressDialog progress;
@@ -46,10 +46,16 @@ public class ledControl extends Activity {
         setContentView(R.layout.activity_led_control);
 
         //call the widgets
-        On = findViewById(R.id.on_btn);
-        Off = findViewById(R.id.off_btn);
-        Discnt = findViewById(R.id.dis_btn);
-        Abt = findViewById(R.id.abt_btn);
+        btSendCode = findViewById(R.id.on_btn);
+        btLedOn = findViewById(R.id.button_ledControl_ledon);
+        btLedOff = findViewById(R.id.button_ledControl_ledoff);
+        btDelay1s = findViewById(R.id.button_ledControl_delay1s);
+        btDelay5s = findViewById(R.id.button_ledControl_delay5s);
+        btPreset = findViewById(R.id.button_ledControl_preset);
+        btDisconnect = findViewById(R.id.dis_btn);
+        btAbout = findViewById(R.id.abt_btn);
+        btBuzzOn = findViewById(R.id.button_ledControl_buzzOn);
+        btBuzzOff = findViewById(R.id.button_ledControl_buzzOff);
         editTextCode = findViewById(R.id.edit_text_code);
         editTextCode.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -63,42 +69,65 @@ public class ledControl extends Activity {
         new ConnectBT().execute(); //Call the class to connect
 
         //commands to be sent to bluetooth
-        On.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                turnOnLed();      //method to turn on
-            }
-        });
-
-        Off.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                turnOffLed();   //method to turn off
-            }
-        });
-
-        Discnt.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Disconnect(); //close connection
-            }
-        });
-
+        btSendCode.setOnClickListener(this);
+        btLedOn.setOnClickListener(this);
+        btLedOff.setOnClickListener(this);
+        btDelay1s.setOnClickListener(this);
+        btDelay5s.setOnClickListener(this);
+        btDisconnect.setOnClickListener(this);
+        btPreset.setOnClickListener(this);
+        btAbout.setOnClickListener(this);
+        btBuzzOn.setOnClickListener(this);
+        btBuzzOff.setOnClickListener(this);
 
     }
+
+    @Override
+    public void onClick(View v) {
+        if(v != null){
+            if(v.getId() == btLedOn.getId()){
+                ledOnTest();
+            }
+            else if(v.getId() == btLedOff.getId()){
+                ledOffTest();
+            }
+            else if(v.getId() == btDelay1s.getId()){
+                delay1s();
+            }
+            else if(v.getId() == btDelay5s.getId()){
+                delay5s();
+            }
+            else if(v.getId() == btSendCode.getId()){
+                sendCode();
+            }
+            else if(v.getId() == btPreset.getId()){
+                sendPreset();
+            }
+            else if(v.getId() == btBuzzOn.getId()){
+                buzzOn();
+            }
+            else if(v.getId() == btBuzzOff.getId()){
+                buzzOff();
+            }
+            else if(v.getId() == btDisconnect.getId()){
+                disconnect();
+            }
+            else if(v.getId() == btAbout.getId()){
+                Intent intent = new Intent(ledControl.this, EditionActivity.class);
+                startActivity(intent);
+            }
+        }
+
+    }
+
 
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        assert inputMethodManager != null;
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    private void Disconnect()
-    {
+    private void disconnect() {
         if (btSocket!=null) //If the btSocket is busy
         {
             try
@@ -112,9 +141,87 @@ public class ledControl extends Activity {
 
     }
 
-    private void turnOffLed()
-    {
-        if (btSocket!=null)
+    private void ledOnTest() {
+        String ligarLed = "LON$";
+        if (btSocket != null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write(ligarLed.getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    private void ledOffTest(){
+        if (btSocket != null){
+            try {
+                String desligarLed = "LOFF$";
+                btSocket.getOutputStream().write(desligarLed.getBytes());
+            } catch (IOException e) {
+                msg("Error");
+            }
+        }
+    }
+
+    private void delay1s(){
+        if (btSocket != null){
+            try {
+                String delay = "D1S$";
+                btSocket.getOutputStream().write(delay.getBytes());
+            } catch (IOException e) {
+                msg("Error");
+            }
+        }
+    }
+
+    private void delay5s(){
+        if (btSocket != null){
+            try {
+                String delay = "D5S$";
+                btSocket.getOutputStream().write(delay.getBytes());
+            } catch (IOException e) {
+                msg("Error");
+            }
+        }
+    }
+    private void buzzOn(){
+        if (btSocket != null){
+            try {
+                String delay = "BON$";
+                btSocket.getOutputStream().write(delay.getBytes());
+            } catch (IOException e) {
+                msg("Error");
+            }
+        }
+    }
+    private void buzzOff(){
+        if (btSocket != null){
+            try {
+                String delay = "BOFF$";
+                btSocket.getOutputStream().write(delay.getBytes());
+            } catch (IOException e) {
+                msg("Error");
+            }
+        }
+    }
+
+    private void sendPreset(){
+        if (btSocket != null){
+            try {
+                String preset = "L1ON$D5S$L1OFF$L2ON$D5S$L2OFF$L3ON$D5S$L3OFF$L4ON$D5S$L4OFF$";
+                btSocket.getOutputStream().write(preset.getBytes());
+            } catch (IOException e) {
+                msg("Error");
+            }
+        }
+    }
+
+    private void sendCode() {
+        if (btSocket != null)
         {
             try
             {
@@ -127,24 +234,7 @@ public class ledControl extends Activity {
         }
     }
 
-    private void turnOnLed()
-    {
-        if (btSocket!=null)
-        {
-            try
-            {
-                btSocket.getOutputStream().write(editTextCode.getText().toString().getBytes());
-            }
-            catch (IOException e)
-            {
-                msg("Error");
-            }
-        }
-    }
-
-    // fast way to call Toast
-    private void msg(String s)
-    {
+    private void msg(String s) {
         Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
 
@@ -157,12 +247,8 @@ public class ledControl extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -170,14 +256,13 @@ public class ledControl extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class ConnectBT extends AsyncTask<Void, Void, Void>  // UI thread
-    {
+    private class ConnectBT extends AsyncTask<Void, Void, Void> {
         private boolean ConnectSuccess = true; //if it's here, it's almost connected
 
         @Override
         protected void onPreExecute()
         {
-            progress = ProgressDialog.show(ledControl.this, "Connecting...", "Please wait!!!");  //show a progress dialog
+            progress = ProgressDialog.show(ledControl.this, "Conectando", "Por favor, espere.");
         }
 
         @Override

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    android:background="#fff"
+    tools:context="com.sirtprojects.testejuh.Activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="#000"
+            android:text="TEAM JUH"/>
+
+        <ImageButton
+            android:id="@+id/image_button_cone"
+            android:layout_below="@+id/text_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_mode_comment_black_24dp"/>
+
+        <ImageButton
+            android:id="@+id/image_button_arc"
+            android:layout_below="@+id/image_button_cone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_arch"
+            android:background="@android:color/transparent"/>
+        <ImageButton
+            android:id="@+id/image_button_stairs"
+            android:layout_below="@+id/image_button_arc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_stairs"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/image_button_edit"
+            android:layout_below="@+id/image_button_stairs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_edit"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.sirtprojects.testejuh;
+package com.sirtprojects.testejuh.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import com.led_on_off.led.R;
 
 public class TestsActivity extends Activity implements View.OnClickListener {
 
-    Button btComandos, btListaDispositivos, btTesteLayout;
+    Button btComandos, btListaDispositivos, btTesteLayout, btMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +20,14 @@ public class TestsActivity extends Activity implements View.OnClickListener {
         btComandos = findViewById(R.id.button_tests_comandos);
         btListaDispositivos = findViewById(R.id.button_tests_lista_dispositivos);
         btTesteLayout = findViewById(R.id.button_tests_testes);
+        btMain = findViewById(R.id.button_tests_main);
 
         btComandos.setOnClickListener(this);
         btListaDispositivos.setOnClickListener(this);
         btTesteLayout.setOnClickListener(this);
+        btMain.setOnClickListener(this);
 
     }
-
 
     @Override
     public void onClick(View v) {
@@ -35,11 +36,14 @@ public class TestsActivity extends Activity implements View.OnClickListener {
                 Intent intent = new Intent(TestsActivity.this, ledControl.class);
                 startActivity(intent);
             }
-            else if(v.getId() == btListaDispositivos.getId()){
+            if(v.getId() == btListaDispositivos.getId()){
                 Intent intent = new Intent(TestsActivity.this, DeviceList.class);
                 startActivity(intent);
             } else if (v.getId() == btTesteLayout.getId()) {
                 Intent intent = new Intent(TestsActivity.this, LayoutActivity.class);
+                startActivity(intent);
+            }else if (v.getId() == btMain.getId()) {
+                Intent intent = new Intent(TestsActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         }

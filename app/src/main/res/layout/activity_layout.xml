@@ -7,14 +7,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.sirtprojects.testejuh.LayoutActivity"
-    android:background="#fff"
-    android:clickable="true"
-    android:focusableInTouchMode="true"
-    android:focusable="true">
+    tools:context="com.sirtprojects.testejuh.Activities.LayoutActivity"
+    android:background="#fff">
 
     <RelativeLayout
-        android:id="@+id/relative_layout_title_ledControl"
+        android:id="@+id/relative_layout_ledControl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -34,21 +31,33 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_below="@+id/relative_layout_title_ledControl"
-        android:id="@+id/relative_layout_buttons"
+        android:layout_below="@+id/relative_layout_ledControl_title"
+        android:id="@+id/relative_layout_ledControl_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/on_btn"
-            android:layout_width="170dp"
-            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="195dp"
-            android:textColor="#212121"
+            android:textColor="#000000"
             android:textSize="30sp"
-            android:text="@string/enviar"/>
+            android:text="ENVIAR"
+            style="@android:style/Widget.Button"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/on_btn"
+            android:layout_marginTop="6dp"
+            android:textColor="#000000"
+            android:id="@+id/off_btn"
+            android:textSize="30sp"
+            android:text="ENVIAR"/>
 
         <EditText
             android:id="@+id/edit_text_code"
@@ -57,46 +66,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/digite_seu_codigo"
-            android:inputType="text"
-            android:textAllCaps="true"
-            android:focusable="false"/>
+            android:autofillHints="teste"
+            tools:targetApi="o"
+            android:inputType="text" />
 
-        <Button
-            android:layout_width="170dp"
-            android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="300dp"
-            android:textColor="#212121"
-            android:id="@+id/off_btn"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="02"
-            android:textSize="30sp"/>
+    </RelativeLayout>
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="500dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:fadingEdge="none"
-            android:textColor="#212121"
-            android:id="@+id/dis_btn"
-            android:textSize="20sp"
-            android:background="@drawable/rounded_button"
-            tools:text="DISCONNECT"
-            tools:typeface="monospace" />
+    <RelativeLayout
+        android:layout_below="@id/relative_layout_ledControl_buttons"
+        android:id="@+id/relative_layout_ledControl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/abt_btn"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:textColor="#212121"
-            android:fontFamily="sans-serif-smallcaps"
-            android:layout_alignTop="@+id/dis_btn"
-            android:textSize="20sp"
-            android:background="@drawable/rounded_button"
-            tools:text="ABOUT"
-            tools:typeface="monospace" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/dis_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:text="DISCONNECT"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/abt_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:text="ABOUT"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

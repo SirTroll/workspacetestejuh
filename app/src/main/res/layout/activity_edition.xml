@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sirtprojects.testejuh.Activities.EditionActivity"
+    android:padding="8dp"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edition_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edição de treino"
+            android:textSize="32sp"
+            android:textColor="#000"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edition_middle"
+        android:layout_below="@id/relative_layout_edition_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_edition_L1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="L1"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <Button
+                    android:id="@+id/button_edition_L2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="L2"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <Button
+                    android:id="@+id/button_edition_L3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="L3"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_edition_L4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="L4"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <Button
+                    android:id="@+id/button_edition_5s"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="+5s"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <Button
+                    android:id="@+id/button_edition_30s"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="+30s"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_edition_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Iniciar"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <Button
+                    android:id="@+id/button_edition_stop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Desligar"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <Button
+                    android:id="@+id/button_edition_restart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Apagar"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_edition_bottom"
+        android:layout_below="@id/relative_layout_edition_middle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/text_view_edition_coding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="Seu código aparecerá aqui"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

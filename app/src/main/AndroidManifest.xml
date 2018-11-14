@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light">
         <activity
-            android:name="com.sirtprojects.testejuh.SplashScreen"
+            android:name="com.sirtprojects.testejuh.Activities.SplashScreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,13 +20,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.sirtprojects.testejuh.DeviceList"
+            android:name="com.sirtprojects.testejuh.Activities.DeviceList"
             android:label="@string/app_name" />
         <activity
-            android:name="com.sirtprojects.testejuh.ledControl"
-            android:label="LED Control" />
-        <activity android:name="com.sirtprojects.testejuh.TestsActivity" />
-        <activity android:name="com.sirtprojects.testejuh.LayoutActivity"></activity>
+            android:name="com.sirtprojects.testejuh.Activities.ledControl"
+            android:label="Comandos" />
+        <activity
+            android:name="com.sirtprojects.testejuh.Activities.TestsActivity" />
+
+        <activity
+            android:name="com.sirtprojects.testejuh.Activities.LayoutActivity" />
+
+        <activity
+            android:name="com.sirtprojects.testejuh.Activities.EditionActivity" />
+
+        <activity
+            android:name="com.sirtprojects.testejuh.Activities.MainActivity" />
+
+        <activity
+            android:name="com.sirtprojects.testejuh.Activities.EditExerciseActivity"
+            android:configChanges="keyboardHidden">
+        </activity>
+
     </application>
 
 </manifest>

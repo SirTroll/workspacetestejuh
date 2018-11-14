@@ -3,11 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.sirtprojects.testejuh.ledControl"
+    android:padding="8dp"
+    tools:context="com.sirtprojects.testejuh.Activities.ledControl"
     android:background="#fff">
 
     <RelativeLayout
@@ -36,39 +33,133 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/on_btn"
-            android:layout_marginTop="20dp"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textColor="#000000"
-            android:textSize="30sp"
-            android:text="ENVIAR"
-            style="@android:style/Widget.Button"/>
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/on_btn"
-            android:layout_marginTop="6dp"
-            android:textColor="#000000"
-            android:id="@+id/off_btn"
-            android:textSize="30sp"
-            android:text="ENVIAR"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/edit_text_code"
-            android:layout_below="@id/off_btn"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/digite_seu_codigo"
-            android:autofillHints="teste"
-            tools:targetApi="o"
-            android:inputType="text" />
+                <Button
+                    android:id="@+id/on_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:text="ENVIAR"
+                    style="@android:style/Widget.Button"/>
+
+                <Button
+                    android:id="@+id/button_ledControl_ledon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:text="LED ON"/>
+
+                <Button
+                    android:id="@+id/button_ledControl_ledoff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:text="LED OFF"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_ledControl_delay1s"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:text="DELAY1S"/>
+
+                <Button
+                    android:id="@+id/button_ledControl_delay5s"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:text="DELAY5S"/>
+
+                <Button
+                    android:id="@+id/button_ledControl_buzzOn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:text="BUZZ ON"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_ledControl_buzzOff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:text="BUZZ OFF"/>
+
+                <Button
+                    android:id="@+id/button_ledControl_preset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:text="PRESET"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edit_text_code"
+                    android:layout_below="@id/button_ledControl_preset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/digite_seu_codigo"
+                    android:autofillHints="teste"
+                    tools:targetApi="o"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/text_view_ledControl_coding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="8dp"
+                    android:hint="Código a ser executado"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -91,8 +182,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:textColor="#000000"
-                android:textSize="20sp"
-                android:text="DISCONNECT"
+                android:textSize="16sp"
+                android:text="Desconectar"
                 tools:ignore="ButtonStyle" />
 
             <Button
@@ -101,8 +192,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:textColor="#000000"
-                android:textSize="20sp"
-                android:text="ABOUT"
+                android:textSize="16sp"
+                android:text="Edição de treino"
                 tools:ignore="ButtonStyle" />
 
         </LinearLayout>

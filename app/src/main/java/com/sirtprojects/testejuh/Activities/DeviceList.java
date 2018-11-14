@@ -1,4 +1,4 @@
-package com.sirtprojects.testejuh;
+package com.sirtprojects.testejuh.Activities;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
