@@ -242,6 +242,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/button_edit_exercise_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -249,11 +250,12 @@
                 android:background="@drawable/rounded_button_green"/>
 
             <Button
+                android:id="@+id/button_edit_exercise_settime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="40dp"
-                android:text="Finalizar"
+                android:text="Editar tempo"
                 android:background="@drawable/rounded_button_green"/>
 
         </LinearLayout>
