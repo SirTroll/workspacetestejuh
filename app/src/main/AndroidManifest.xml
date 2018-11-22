@@ -25,23 +25,17 @@
         <activity
             android:name="com.sirtprojects.testejuh.Activities.ledControl"
             android:label="Comandos" />
-        <activity
-            android:name="com.sirtprojects.testejuh.Activities.TestsActivity" />
-
-        <activity
-            android:name="com.sirtprojects.testejuh.Activities.LayoutActivity" />
-
-        <activity
-            android:name="com.sirtprojects.testejuh.Activities.EditionActivity" />
-
-        <activity
-            android:name="com.sirtprojects.testejuh.Activities.MainActivity" />
-
+        <activity android:name="com.sirtprojects.testejuh.Activities.TestsActivity" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.LayoutActivity" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.EditionActivity" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.MainActivity" />
         <activity
             android:name="com.sirtprojects.testejuh.Activities.EditExerciseActivity"
-            android:configChanges="keyboardHidden">
-        </activity>
-
+            android:configChanges="keyboardHidden" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.ConeExercisesActivity" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.EditListExercisesActivity" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.EditActivity" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.EditTrainingActivity"></activity>
     </application>
 
 </manifest>

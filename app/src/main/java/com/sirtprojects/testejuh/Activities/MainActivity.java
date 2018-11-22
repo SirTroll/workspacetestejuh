@@ -10,23 +10,29 @@ import com.led_on_off.led.R;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    ImageButton btEdit;
+    ImageButton btEdit, btTraining;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btEdit = findViewById(R.id.image_button_edit);
+        btTraining = findViewById(R.id.image_button_main_training);
+        btEdit = findViewById(R.id.image_button_main_edit_exercise);
 
+        btTraining.setOnClickListener(this);
         btEdit.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v != null){
-            if(v.getId() == btEdit.getId()){
-                Intent intent = new Intent(MainActivity.this, EditExerciseActivity.class);
+            if(v.getId() == btTraining.getId()){
+                Intent intent = new Intent(MainActivity.this, EditTrainingActivity.class);
+                startActivity(intent);
+            }
+            else if(v.getId() == btEdit.getId()){
+                Intent intent = new Intent(MainActivity.this, EditActivity.class);
                 startActivity(intent);
             }
         }

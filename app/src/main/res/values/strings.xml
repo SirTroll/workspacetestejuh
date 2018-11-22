@@ -30,4 +30,7 @@
     <string name="g">g</string>
     <string name="h">h</string>
     <string name="i">i</string>
+    <string name="obrigatorio">Obrigatório</string>
+    <string name="cancel">Cancelar</string>
+    <string name="finalizar">Finalizar</string>
 </resources>

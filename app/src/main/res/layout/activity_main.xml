@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/text_view_title"
+            android:id="@+id/text_view_main_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
@@ -22,35 +22,16 @@
             android:text="TEAM JUH"/>
 
         <ImageButton
-            android:id="@+id/image_button_cone"
-            android:layout_below="@+id/text_view_title"
-            android:layout_width="wrap_content"
+            android:id="@+id/image_button_main_training"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_mode_comment_black_24dp"/>
+            android:src="@drawable/ic_run"/>
 
         <ImageButton
-            android:id="@+id/image_button_arc"
-            android:layout_below="@+id/image_button_cone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/ic_arch"
-            android:background="@android:color/transparent"/>
-        <ImageButton
-            android:id="@+id/image_button_stairs"
-            android:layout_below="@+id/image_button_arc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/ic_stairs"
-            android:background="@android:color/transparent"/>
-
-        <ImageButton
-            android:id="@+id/image_button_edit"
-            android:layout_below="@+id/image_button_stairs"
+            android:id="@+id/image_button_main_edit_exercise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"

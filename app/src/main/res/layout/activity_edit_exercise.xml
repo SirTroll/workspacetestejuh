@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nível:"
+                android:text="Categoria:"
                 android:textSize="18sp"/>
 
         </LinearLayout>
@@ -220,6 +220,7 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/edit_text_edit_exercise_description_exercise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
@@ -254,8 +255,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="40dp"
-                android:text="Editar tempo"
+                android:layout_marginStart="20dp"
+                android:text="Salvar"
                 android:background="@drawable/rounded_button_green"/>
 
         </LinearLayout>
