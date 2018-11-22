@@ -7,42 +7,12 @@
     android:background="#fff"
     tools:context="com.sirtprojects.testejuh.Activities.EditTrainingActivity">
 
-    <LinearLayout
-        android:id="@+id/linear_layout_edit_training_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <ImageButton
-            android:id="@+id/image_button_edit_training_cone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_eject"/>
-
-        <ImageButton
-            android:id="@+id/image_button_edit_training_arc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/ic_arch"
-            android:background="@android:color/transparent"/>
-
-        <ImageButton
-            android:id="@+id/image_button_edit_training_stairs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/ic_stairs"
-            android:background="@android:color/transparent"/>
-
-    </LinearLayout>
+    <include
+        android:id="@+id/container_fragment"
+        layout="@layout/blank"/>
 
     <LinearLayout
-        android:layout_below="@id/linear_layout_edit_training_top"
+        android:layout_below="@id/container_fragment"
         android:id="@+id/linear_layout_edit_training_tags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +21,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="cardview"/>
+            android:text="cardview"
+            android:textSize="30sp"
+            android:textColor="#000"/>
 
     </LinearLayout>
 
