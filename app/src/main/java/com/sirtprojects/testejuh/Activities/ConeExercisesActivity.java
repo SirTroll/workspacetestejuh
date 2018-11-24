@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.led_on_off.led.R;
+import com.sirtprojects.testejuh.Adapters.ExerciseAdapter;
 import com.sirtprojects.testejuh.Models.Exercise;
 
 import java.util.ArrayList;

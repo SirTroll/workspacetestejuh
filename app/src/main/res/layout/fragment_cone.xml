@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HELLLLLLLLLLLLO HELLOO"
-        android:textColor="#000"
-        android:textSize="30sp"/>
+    <ListView
+        android:id="@+id/list_view_fragment_cone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#000000"
+        android:dividerHeight="1dp"
+        android:choiceMode="singleChoice" />
 
 </android.support.constraint.ConstraintLayout>

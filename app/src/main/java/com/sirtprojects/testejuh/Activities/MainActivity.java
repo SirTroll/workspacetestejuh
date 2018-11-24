@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.led_on_off.led.R;
+import com.sirtprojects.testejuh.Models.Treino;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -22,6 +23,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         btTraining.setOnClickListener(this);
         btEdit.setOnClickListener(this);
+        Treino treino = new Treino(this);
+        treino.getCodigo_treino();
     }
 
     @Override

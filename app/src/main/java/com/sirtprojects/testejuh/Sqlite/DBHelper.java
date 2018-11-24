@@ -26,6 +26,14 @@ public class DBHelper extends SQLiteOpenHelper {
             ")"
         );
 
+        db.execSQL(
+            "CREATE TABLE [treino] (\n" +
+            "[codigo] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
+            "[nome] VARCHAR(60)  NOT NULL,\n" +
+            "[exercicios] VARCHAR(256)  NOT NULL \n" +
+            ")"
+        );
+
     }
 
     @Override

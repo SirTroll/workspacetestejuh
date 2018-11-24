@@ -1,4 +1,4 @@
-package com.sirtprojects.testejuh.Activities;
+package com.sirtprojects.testejuh.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

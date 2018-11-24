@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="8dp"
     android:background="#fff">
 
     <LinearLayout
@@ -19,8 +18,7 @@
             android:layout_marginTop="40dp"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_eject"
-            android:onClick="clickCone"/>
+            android:src="@drawable/ic_eject"/>
 
         <ImageButton
             android:id="@+id/image_button_fragment_edit_training_arc"

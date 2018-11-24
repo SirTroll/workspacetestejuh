@@ -76,6 +76,12 @@ public class Exercise {
         try{
             dbHelper = new DBHelper(context);
             sqLiteDatabase = dbHelper.getReadableDatabase();
+
+            String table = "exercicio";
+            String[] tableColumns = new String[] {"categoria"};
+            String whereClause = "categoria = ?";
+            String[] selectionArgs = {"cone"};
+
             cursor = sqLiteDatabase.query("exercicio", null, null,
                     null,null,null,null);
             while(cursor.moveToNext()){
@@ -102,7 +108,7 @@ public class Exercise {
         return exercises;
     }
 
-    public ArrayList<Exercise> getExercisesByCategory(){
+    public ArrayList<Exercise> getExercisesByCategory(String categoria){
         DBHelper dbHelper = null;
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
@@ -110,8 +116,14 @@ public class Exercise {
         try{
             dbHelper = new DBHelper(context);
             sqLiteDatabase = dbHelper.getReadableDatabase();
-            cursor = sqLiteDatabase.query("exercicio", null, "categoria = ?",
-                    new String[]{String.valueOf(categoria)}, null,null,null,null);
+
+            String table = "exercicio";
+            String[] tableColumns = new String[] {"codigo","nome","categoria","nivel","descricao"};
+            String whereClause = "categoria = ?";
+            String[] selectionArgs = {categoria};
+
+            cursor = sqLiteDatabase.query(table, tableColumns, whereClause,
+                    selectionArgs,null,null,null);
             while(cursor.moveToNext()){
                 Exercise exercise = new Exercise(context);
                 exercise.codigo = cursor.getInt(cursor.getColumnIndex("codigo"));
@@ -239,15 +251,15 @@ public class Exercise {
         }
     }
 
-    public void exercicioByCategory(String categoria){
+    public void exercicioByCategory(){
         DBHelper dbHelper = null;
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
         try{
             dbHelper = new DBHelper(context);
             sqLiteDatabase = dbHelper.getReadableDatabase();
-            cursor = sqLiteDatabase.query("exercise",null,"codigo = ?",
-                    new String[]{String.valueOf(codigo)},null,null,null);
+            cursor = sqLiteDatabase.query("exercicio", null, null,
+                    null,null,null,null);
             excluir = true;
             while(cursor.moveToNext()){
                 this.codigo = cursor.getInt(cursor.getColumnIndex("codigo"));

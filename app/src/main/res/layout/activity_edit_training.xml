@@ -1,59 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp"
     android:background="#fff"
+    android:orientation="vertical"
     tools:context="com.sirtprojects.testejuh.Activities.EditTrainingActivity">
 
-    <include
-        android:id="@+id/container_fragment"
-        layout="@layout/blank"/>
+    <LinearLayout
+        android:id="@+id/linear_layout_edit_training_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.7"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/container_fragment"
+            layout="@layout/blank"/>
+
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@id/container_fragment"
         android:id="@+id/linear_layout_edit_training_tags"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="cardview"
-            android:textSize="30sp"
-            android:textColor="#000"/>
+            android:layout_height="0dp"
+            android:layout_weight="0.7">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_edit_training"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_edit_training_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_edit_training_cancelar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/cancel"
+                android:background="@drawable/rounded_button_light_red"/>
+
+            <Button
+                android:id="@+id/button_edit_training_finalizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/finalizar"
+                android:background="@drawable/rounded_button_green"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linear_layout_edit_training_buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button_edit_training_finalizar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/cancel"
-            android:background="@drawable/rounded_button_light_red"/>
 
-        <Button
-            android:id="@+id/button_edit_training_cancelar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/finalizar"
-            android:background="@drawable/rounded_button_green"/>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>
