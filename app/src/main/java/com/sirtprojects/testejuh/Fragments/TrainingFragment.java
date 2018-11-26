@@ -1,5 +1,6 @@
 package com.sirtprojects.testejuh.Fragments;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -26,7 +27,6 @@ public class TrainingFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_training, container, false);
-
 
         btCone = view.findViewById(R.id.image_button_fragment_edit_training_cone);
         btArc = view.findViewById(R.id.image_button_fragment_edit_training_arc);

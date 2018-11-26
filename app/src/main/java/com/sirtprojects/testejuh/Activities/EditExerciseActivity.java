@@ -2,7 +2,9 @@ package com.sirtprojects.testejuh.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -38,6 +40,9 @@ public class EditExerciseActivity extends Activity implements View.OnClickListen
 
         editTextName = findViewById(R.id.edit_text_edit_exercise_name_exercise);
         editTextDescription = findViewById(R.id.edit_text_edit_exercise_description_exercise);
+
+        editTextDescription.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        editTextDescription.setRawInputType(InputType.TYPE_CLASS_TEXT);
 
         buttonsLevel[0].setOnClickListener(this);
         buttonsLevel[1].setOnClickListener(this);

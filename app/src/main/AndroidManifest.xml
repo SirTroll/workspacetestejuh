@@ -32,10 +32,10 @@
         <activity
             android:name="com.sirtprojects.testejuh.Activities.EditExerciseActivity"
             android:configChanges="keyboardHidden" />
-        <activity android:name="com.sirtprojects.testejuh.Activities.ConeExercisesActivity" />
         <activity android:name="com.sirtprojects.testejuh.Activities.EditListExercisesActivity" />
         <activity android:name="com.sirtprojects.testejuh.Activities.EditActivity" />
-        <activity android:name="com.sirtprojects.testejuh.Activities.EditTrainingActivity"></activity>
+        <activity android:name="com.sirtprojects.testejuh.Activities.EditTrainingActivity" />
+        <activity android:name="com.sirtprojects.testejuh.Activities.TrainingsActivity"></activity>
     </application>
 
 </manifest>

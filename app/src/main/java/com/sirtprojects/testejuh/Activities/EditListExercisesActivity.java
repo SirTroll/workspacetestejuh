@@ -39,6 +39,7 @@ public class EditListExercisesActivity extends Activity implements View.OnClickL
         btVoltar.setOnClickListener(this);
         tvDescription.setOnClickListener(this);
 
+
         exercises = new Exercise(this).getExercises();
         exerciseAdapter = new ExerciseAdapter(this, exercises);
         listViewExercises.setAdapter(exerciseAdapter);

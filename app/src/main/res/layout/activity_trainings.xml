@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sirtprojects.testejuh.Activities.ConeExercisesActivity">
+    tools:context="com.sirtprojects.testejuh.Activities.TrainingsActivity">
 
     <ListView
-        android:id="@+id/list_view_cone"
+        android:id="@+id/list_view_trainings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:divider="#000000"
-        android:dividerHeight="1dp"
-        android:choiceMode="multipleChoice" />
+        android:clickable="true"
+        android:focusable="true">
+
+    </ListView>
+
 </android.support.constraint.ConstraintLayout>

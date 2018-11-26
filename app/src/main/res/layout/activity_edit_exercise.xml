@@ -248,7 +248,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cancelar"
-                android:background="@drawable/rounded_button_green"/>
+                android:background="@drawable/rounded_button_light_red"/>
 
             <Button
                 android:id="@+id/button_edit_exercise_settime"

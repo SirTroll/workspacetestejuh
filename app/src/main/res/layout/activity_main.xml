@@ -7,37 +7,71 @@
     android:background="#fff"
     tools:context="com.sirtprojects.testejuh.Activities.MainActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/text_view_main_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:textSize="40sp"
+        android:gravity="center"
+        android:textColor="#000"
+        android:text="TEAM JUH"/>
 
-        <TextView
-            android:id="@+id/text_view_main_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:gravity="center"
-            android:textColor="#000"
-            android:text="TEAM JUH"/>
+    <TextView
+        android:layout_below="@id/text_view_main_title"
+        android:id="@+id/text_view_main_bloco1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:textSize="16sp"
+        android:text="Treinos"
+        android:textColor="#000"
+        android:gravity="center"/>
 
-        <ImageButton
-            android:id="@+id/image_button_main_training"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_run"/>
+    <ImageButton
+        android:layout_below="@id/text_view_main_bloco1"
+        android:id="@+id/image_button_main_training"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_run"/>
 
-        <ImageButton
-            android:id="@+id/image_button_main_edit_exercise"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/ic_edit"
-            android:background="@android:color/transparent"/>
+    <TextView
+        android:layout_below="@id/image_button_main_training"
+        android:id="@+id/text_view_main_bloco2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:text="Novo treino"
+        android:textColor="#000"
+        android:gravity="center"/>
 
-    </LinearLayout>
+    <ImageButton
+        android:layout_below="@id/text_view_main_bloco2"
+        android:id="@+id/image_button_main_new_train"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:layout_below="@id/image_button_main_new_train"
+        android:id="@+id/text_view_main_bloco3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:text="Edição de exercícios"
+        android:textColor="#000"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:layout_below="@id/text_view_main_bloco3"
+        android:id="@+id/image_button_main_edit_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:background="@android:color/transparent"/>
 
 </RelativeLayout>
