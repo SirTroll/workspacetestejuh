@@ -34,8 +34,6 @@ public class StairsFragment extends Fragment implements AdapterView.OnItemClickL
     private ArrayList<Exercise> exercises;
     private Context context;
     private AlertDialog alerta;
-    SharedPreferences preferences;
-    SharedPreferences.Editor editor;
 
     @Nullable
     @Override
@@ -46,9 +44,6 @@ public class StairsFragment extends Fragment implements AdapterView.OnItemClickL
 
         listViewStairs.setOnItemClickListener(this);
         listViewStairs.setOnItemLongClickListener(this);
-
-        preferences = getContext().getSharedPreferences("MyPrefs", 0);
-        editor = preferences.edit();
 
         exercises = new Exercise(context).getExercisesByCategory("Escada");
         exerciseAdapter = new ExerciseAdapter(context, exercises);
@@ -64,11 +59,14 @@ public class StairsFragment extends Fragment implements AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(listViewStairs.getContext(),
-                "Posição Selecionada:" + position, Toast.LENGTH_LONG)
-                .show();
+//        Toast.makeText(listViewStairs.getContext(),
+//                "Posição Selecionada:" + position, Toast.LENGTH_LONG)
+//                .show();
 
         //SALVANDO
+        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCES",0);
+        SharedPreferences.Editor editor = preferences.edit();
+
         final Exercise exercise = exercises.get(position);
 
         int codigo = exercise.getCodigo();
@@ -82,6 +80,7 @@ public class StairsFragment extends Fragment implements AdapterView.OnItemClickL
         editor.putString("categoriaStairs", categoria);
         editor.putString("nivelStairs", nivel);
         editor.putString("descricaoStairs", descricao);
+        editor.apply();
 
         //PRÓXIMO FRAGMENT
         //AQUI
@@ -89,9 +88,9 @@ public class StairsFragment extends Fragment implements AdapterView.OnItemClickL
         FragmentManager fragmentTransaction = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
         FragmentTransaction transaction = fragmentTransaction.beginTransaction();
 
-        TrainingFragment trainingFragment = new TrainingFragment();
+        ListTrainingFragment listTrainingFragment = new ListTrainingFragment();
 
-        transaction.replace(R.id.container_fragment, trainingFragment);
+        transaction.replace(R.id.container_fragment, listTrainingFragment);
         transaction.addToBackStack(null);
 
         transaction.commit();
@@ -106,7 +105,6 @@ public class StairsFragment extends Fragment implements AdapterView.OnItemClickL
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
         final Exercise exercise = exercises.get(position);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);

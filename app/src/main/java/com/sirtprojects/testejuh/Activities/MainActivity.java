@@ -2,6 +2,7 @@ package com.sirtprojects.testejuh.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -34,6 +35,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
             }
             else if(v.getId() == btNewTraining.getId()){
+                SharedPreferences preferences = this.getSharedPreferences("PREFERENCES", 0);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.commit();
                 Intent intent = new Intent(MainActivity.this, EditTrainingActivity.class);
                 startActivity(intent);
             }

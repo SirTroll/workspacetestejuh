@@ -34,8 +34,6 @@ public class ArcFragment extends Fragment implements AdapterView.OnItemClickList
     private ArrayList<Exercise> exercises;
     private Context context;
     private AlertDialog alerta;
-    SharedPreferences preferences;
-    SharedPreferences.Editor editor;
 
     @Nullable
     @Override
@@ -46,9 +44,6 @@ public class ArcFragment extends Fragment implements AdapterView.OnItemClickList
 
         listViewArc.setOnItemClickListener(this);
         listViewArc.setOnItemLongClickListener(this);
-
-        preferences = getContext().getSharedPreferences("MyPrefs", 0);
-        editor = preferences.edit();
 
         exercises = new Exercise(context).getExercisesByCategory("Arco");
         exerciseAdapter = new ExerciseAdapter(context, exercises);
@@ -64,11 +59,14 @@ public class ArcFragment extends Fragment implements AdapterView.OnItemClickList
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(listViewArc.getContext(),
-                "Posição Selecionada:" + position, Toast.LENGTH_LONG)
-                .show();
+//        Toast.makeText(listViewArc.getContext(),
+//                "Posição Selecionada:" + position, Toast.LENGTH_LONG)
+//                .show();
 
         //SALVANDO
+        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCES",0);
+        SharedPreferences.Editor editor = preferences.edit();
+
         final Exercise exercise = exercises.get(position);
 
         int codigo = exercise.getCodigo();
@@ -82,15 +80,16 @@ public class ArcFragment extends Fragment implements AdapterView.OnItemClickList
         editor.putString("categoriaArc", categoria);
         editor.putString("nivelArc", nivel);
         editor.putString("descricaoArc", descricao);
+        editor.apply();
 
         //PRÓXIMO FRAGMENT
         //AQUI
         FragmentManager fragmentTransaction = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
         FragmentTransaction transaction = fragmentTransaction.beginTransaction();
 
-        TrainingFragment trainingFragment = new TrainingFragment();
+        ListTrainingFragment listTrainingFragment = new ListTrainingFragment();
 
-        transaction.replace(R.id.container_fragment, trainingFragment);
+        transaction.replace(R.id.container_fragment, listTrainingFragment);
         transaction.addToBackStack(null);
 
         transaction.commit();

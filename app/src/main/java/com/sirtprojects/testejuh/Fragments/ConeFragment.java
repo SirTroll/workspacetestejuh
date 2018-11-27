@@ -61,9 +61,9 @@ public class ConeFragment extends Fragment implements AdapterView.OnItemClickLis
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(listViewCones.getContext(),
-                "Posição Selecionada:" + position, Toast.LENGTH_LONG)
-                .show();
+//        Toast.makeText(listViewCones.getContext(),
+//                "Posição Selecionada:" + position, Toast.LENGTH_LONG)
+//                .show();
 
         // SALVANDO
         SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCES",0);
