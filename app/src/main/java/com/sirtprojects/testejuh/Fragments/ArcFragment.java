@@ -64,7 +64,7 @@ public class ArcFragment extends Fragment implements AdapterView.OnItemClickList
 //                .show();
 
         //SALVANDO
-        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCES",0);
+        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCESARC",0);
         SharedPreferences.Editor editor = preferences.edit();
 
         final Exercise exercise = exercises.get(position);

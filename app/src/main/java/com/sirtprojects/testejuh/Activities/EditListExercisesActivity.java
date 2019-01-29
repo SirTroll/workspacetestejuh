@@ -37,12 +37,22 @@ public class EditListExercisesActivity extends Activity implements View.OnClickL
 
         listViewExercises.setOnItemClickListener(this);
         btVoltar.setOnClickListener(this);
-        tvDescription.setOnClickListener(this);
-
+        //tvDescription.setOnClickListener(this);
 
         exercises = new Exercise(this).getExercises();
         exerciseAdapter = new ExerciseAdapter(this, exercises);
         listViewExercises.setAdapter(exerciseAdapter);
+
+        if(listViewExercises.getCount() == 0){
+            listViewExercises.setVisibility(View.GONE);
+            tvDescription.setVisibility(View.VISIBLE);
+            tvDescription.setText("Não existem exercícios cadastrados");
+        }
+        else{
+            listViewExercises.setVisibility(View.VISIBLE);
+            tvDescription.setVisibility(View.GONE);
+        }
+
     }
 
     @Override

@@ -46,11 +46,7 @@ public class EditTrainingActivity extends FragmentActivity implements View.OnCli
     public void onClick(View v) {
         if(v != null){
             if(v.getId() == btCancel.getId()){
-                SharedPreferences preferences = this.getSharedPreferences("PREFERENCES", 0);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.clear();
-                editor.commit();
-                finish();
+                onBackPressed();
             }
             else if(v.getId() == btFinish.getId()){
 
@@ -73,9 +69,22 @@ public class EditTrainingActivity extends FragmentActivity implements View.OnCli
     @Override
     public void onBackPressed() {
         SharedPreferences preferences = this.getSharedPreferences("PREFERENCES", 0);
+        SharedPreferences preferencesCone = this.getSharedPreferences("PREFERENCESCONE", 0);
+        SharedPreferences preferencesArc = this.getSharedPreferences("PREFERENCESARC", 0);
+        SharedPreferences preferencesStairs = this.getSharedPreferences("PREFERENCESSTAIRS", 0);
+
         SharedPreferences.Editor editor = preferences.edit();
+        SharedPreferences.Editor editorCone = preferencesCone.edit();
+        SharedPreferences.Editor editorArc = preferencesArc.edit();
+        SharedPreferences.Editor editorStairs = preferencesStairs.edit();
         editor.clear();
+        editorCone.clear();
+        editorArc.clear();
+        editorStairs.clear();
         editor.commit();
+        editorCone.commit();
+        editorArc.commit();
+        editorStairs.commit();
         finish();
     }
 }

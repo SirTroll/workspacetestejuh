@@ -64,7 +64,7 @@ public class StairsFragment extends Fragment implements AdapterView.OnItemClickL
 //                .show();
 
         //SALVANDO
-        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCES",0);
+        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCESSTAIRS",0);
         SharedPreferences.Editor editor = preferences.edit();
 
         final Exercise exercise = exercises.get(position);

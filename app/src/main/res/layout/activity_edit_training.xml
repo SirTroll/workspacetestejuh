@@ -58,6 +58,7 @@
                 android:layout_weight="0.5"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="6dp"
                 android:text="@string/cancel"
                 android:background="@drawable/rounded_button_light_red"/>
 
@@ -68,6 +69,7 @@
                 android:layout_weight="0.5"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="6dp"
                 android:text="@string/finalizar"
                 android:background="@drawable/rounded_button_green"/>
 

@@ -10,7 +10,7 @@ import com.led_on_off.led.R;
 
 public class EditActivity extends Activity implements View.OnClickListener{
 
-    Button btAdd, btConsulta;
+    Button btAdd, btConsulta, btVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,11 @@ public class EditActivity extends Activity implements View.OnClickListener{
 
         btAdd = findViewById(R.id.button_edit_activity_add_exercise);
         btConsulta = findViewById(R.id.button_edit_activity_consulta_exercicios);
+        btVoltar = findViewById(R.id.button_edit_back);
 
         btAdd.setOnClickListener(this);
         btConsulta.setOnClickListener(this);
+        btVoltar.setOnClickListener(this);
 
     }
 
@@ -34,6 +36,9 @@ public class EditActivity extends Activity implements View.OnClickListener{
         else if(v.getId() == btConsulta.getId()){
             Intent intent = new Intent(EditActivity.this, EditListExercisesActivity.class);
             startActivity(intent);
+        }
+        else if(v.getId() == btVoltar.getId()){
+            finish();
         }
 
     }

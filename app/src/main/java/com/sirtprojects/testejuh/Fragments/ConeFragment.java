@@ -66,7 +66,7 @@ public class ConeFragment extends Fragment implements AdapterView.OnItemClickLis
 //                .show();
 
         // SALVANDO
-        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCES",0);
+        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCESCONE",0);
         SharedPreferences.Editor editor = preferences.edit();
 
         final Exercise exercise = exercises.get(position);

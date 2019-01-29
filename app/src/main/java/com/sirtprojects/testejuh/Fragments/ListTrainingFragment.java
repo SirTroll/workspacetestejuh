@@ -3,6 +3,7 @@ package com.sirtprojects.testejuh.Fragments;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +18,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ListTrainingFragment extends Fragment {
 
     private ListView listViewTraining;
     Button btFinalizado;
-
 
     @Nullable
     @Override
@@ -50,26 +51,65 @@ public class ListTrainingFragment extends Fragment {
     private List<ExercicioLista> gerarExercicio(){
         List<ExercicioLista> exercicios = new ArrayList<>();
 
-        SharedPreferences preferences = getContext().getSharedPreferences("PREFERENCES", 0);
-        SharedPreferences.Editor editor = preferences.edit();
+        SharedPreferences preferencesCone = getContext().getSharedPreferences("PREFERENCESCONE", 0);
+        SharedPreferences preferencesArc = getContext().getSharedPreferences("PREFERENCESARC", 0);
+        SharedPreferences preferencesStairs = getContext().getSharedPreferences("PREFERENCESSTAIRS", 0);
+        SharedPreferences.Editor editorCone = preferencesCone.edit();
+        SharedPreferences.Editor editorArc = preferencesArc.edit();
+        SharedPreferences.Editor editorStairs = preferencesStairs.edit();
 
-        if(preferences.getString("nomeCone", null) != null) {
-            exercicios.add(criarExercicio(preferences.getString("nomeCone", null),
-                    preferences.getString("nivelCone", null),
-                    preferences.getString("categoriaCone", null),
-                    preferences.getString("descricaoCone", null))
+        if(preferencesCone.getString("nomeCone", null) != null) {
+            String nomeCone = preferencesCone.getString("nomeCone", null);
+            String nivelCone = preferencesCone.getString("nivelCone", null);
+            String categoriaCone = preferencesCone.getString("categoriaCone", null);
+            String descricaoCone = preferencesCone.getString("descricaoCone", null);
+
+            String nomeBackup = preferencesCone.getString("nomeBackup", null);
+            String nivelBackup = preferencesCone.getString("nivelBackup", null);
+            String categoriaBackup = preferencesCone.getString("categoriaBackup", null);
+            String descricaoBackup = preferencesCone.getString("descricaoBackup", null);
+
+            if(!nomeCone.equals(nomeBackup)
+                    || !categoriaCone.equals(categoriaBackup)
+                    || !nivelCone.equals(nivelBackup)
+                    || !descricaoCone.equals(descricaoBackup) ){
+
+                Map<String, ?> allEntries = preferencesCone.getAll();
+
+                for(Map.Entry<String, ?> entry : allEntries.entrySet()){
+                    Log.d("map values", entry.getKey() + ": " + entry.getValue().toString());
+
+                }
+
+                exercicios.add(criarExercicio(nomeCone, nivelCone, categoriaCone, descricaoCone));
+                exercicios.add(criarExercicio(nomeCone, nivelCone, categoriaCone, descricaoCone));
+                exercicios.add(criarExercicio(nomeCone, nivelCone, categoriaCone, descricaoCone));
+
+                editorCone.putString("nomeBackup", nomeCone);
+                editorCone.putString("nivelBackup", nivelCone);
+                editorCone.putString("categoriaBackup", categoriaCone);
+                editorCone.putString("descricaoBackup", descricaoBackup);
+
+                editorCone.apply();
+            }
+
+            else{
+
+            }
+        }
+
+        if(preferencesArc.getString("nomeArc", null) != null){
+            exercicios.add(criarExercicio(preferencesArc.getString("nomeArc", null),
+                    preferencesArc.getString("nivelArc", null),
+                    preferencesArc.getString("categoriaArc", null),
+                    preferencesArc.getString("descricaoArc", null))
             );}
-        if(preferences.getString("nomeArc", null) != null){
-            exercicios.add(criarExercicio(preferences.getString("nomeArc", null),
-                    preferences.getString("nivelArc", null),
-                    preferences.getString("categoriaArc", null),
-                    preferences.getString("descricaoArc", null))
-            );}
-        if(preferences.getString("nomeStairs", null) != null){
-            exercicios.add(criarExercicio(preferences.getString("nomeStairs", null),
-                    preferences.getString("nivelStairs", null),
-                    preferences.getString("categoriaStairs", null),
-                    preferences.getString("descricaoStairs", null))
+
+        if(preferencesStairs.getString("nomeStairs", null) != null){
+            exercicios.add(criarExercicio(preferencesStairs.getString("nomeStairs", null),
+                    preferencesStairs.getString("nivelStairs", null),
+                    preferencesStairs.getString("categoriaStairs", null),
+                    preferencesStairs.getString("descricaoStairs", null))
             );}
 
         return exercicios;
