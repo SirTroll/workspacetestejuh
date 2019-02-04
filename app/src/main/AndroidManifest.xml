@@ -23,7 +23,7 @@
             android:name="com.sirtprojects.testejuh.Activities.DeviceList"
             android:label="@string/app_name" />
         <activity
-            android:name="com.sirtprojects.testejuh.Activities.ledControl"
+            android:name="com.sirtprojects.testejuh.Activities.ControlActivity"
             android:label="Comandos" />
         <activity android:name="com.sirtprojects.testejuh.Activities.TestsActivity" />
         <activity android:name="com.sirtprojects.testejuh.Activities.LayoutActivity" />

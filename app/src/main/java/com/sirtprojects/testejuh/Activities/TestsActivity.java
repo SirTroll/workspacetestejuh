@@ -33,7 +33,7 @@ public class TestsActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         if(v != null){
             if(v.getId() == btComandos.getId()){
-                Intent intent = new Intent(TestsActivity.this, ledControl.class);
+                Intent intent = new Intent(TestsActivity.this, ControlActivity.class);
                 startActivity(intent);
             }
             if(v.getId() == btListaDispositivos.getId()){

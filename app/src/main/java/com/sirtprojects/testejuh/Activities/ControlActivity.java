@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 
-public class ledControl extends Activity implements View.OnClickListener {
+public class ControlActivity extends Activity implements View.OnClickListener {
 
     Button btSendCode, btLedOn, btLedOff, btDisconnect, btAbout, btDelay1s, btDelay5s, btPreset, btBuzzOn, btBuzzOff;
     EditText editTextCode;
@@ -42,7 +42,7 @@ public class ledControl extends Activity implements View.OnClickListener {
         Intent newint = getIntent();
         address = newint.getStringExtra(DeviceList.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
-        //view of the ledControl
+        //view of the ControlActivity
         setContentView(R.layout.activity_led_control);
 
         //call the widgets
@@ -113,7 +113,7 @@ public class ledControl extends Activity implements View.OnClickListener {
                 disconnect();
             }
             else if(v.getId() == btAbout.getId()){
-                Intent intent = new Intent(ledControl.this, EditionActivity.class);
+                Intent intent = new Intent(ControlActivity.this, EditionActivity.class);
                 startActivity(intent);
             }
         }
@@ -262,7 +262,7 @@ public class ledControl extends Activity implements View.OnClickListener {
         @Override
         protected void onPreExecute()
         {
-            progress = ProgressDialog.show(ledControl.this, "Conectando", "Por favor, espere.");
+            progress = ProgressDialog.show(ControlActivity.this, "Conectando", "Por favor, espere.");
         }
 
         @Override

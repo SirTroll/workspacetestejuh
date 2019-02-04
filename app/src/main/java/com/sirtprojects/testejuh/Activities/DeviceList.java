@@ -46,9 +46,7 @@ public class DeviceList extends Activity
 
         if(myBluetooth == null)
         {
-            //Show a mensag. that the device has no bluetooth adapter
-            Toast.makeText(getApplicationContext(), "Bluetooth Device Not Available", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(getApplicationContext(), "Dispositivo Bluetooth não disponível", Toast.LENGTH_LONG).show();
             //finish apk
             finish();
         }
@@ -83,7 +81,7 @@ public class DeviceList extends Activity
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "No Paired Bluetooth Devices Found.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Nenhum dispositivo Bluetooth pareado encontrado", Toast.LENGTH_LONG).show();
         }
 
         final ArrayAdapter adapter = new ArrayAdapter(this, R.layout.adapter_list_view_devices, list);
@@ -101,10 +99,10 @@ public class DeviceList extends Activity
             String address = info.substring(info.length() - 17);
 
             // Make an intent to start next activity.
-            Intent i = new Intent(DeviceList.this, ledControl.class);
+            Intent i = new Intent(DeviceList.this, ControlActivity.class);
 
             //Change the activity.
-            i.putExtra(EXTRA_ADDRESS, address); //this will be received at ledControl (class) Activity
+            i.putExtra(EXTRA_ADDRESS, address); //this will be received at ControlActivity (class) Activity
             startActivity(i);
         }
     };
